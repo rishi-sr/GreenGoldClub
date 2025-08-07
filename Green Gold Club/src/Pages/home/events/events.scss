@@ -1,0 +1,143 @@
+.events{
+    height: 900px;
+    width: 100%;
+    margin-top: 790px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+
+    .heading{
+        height: 100px;
+        width: 90%;
+        text-align: center;
+        font-size: 24px;
+        color: #0c4121;
+        margin-bottom: 10px;
+    }
+
+    .event-details{
+        height: 800px;
+        width: 90%;
+        display: flex;
+
+
+        //scroll and search
+        .scroll{
+            height: 100%;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+
+
+            #search-query{
+                height: 40px;
+                padding: 10px;
+                width: 80%;
+                border: none;
+                border-radius: 10px;
+                background-color: #0c4121;
+                color: #fffceb;
+                box-shadow: 0px 2px 9px 4px #0c4121;
+            }
+
+            .list{
+                height: 700px;
+                font-size: 20px;
+                color: #0c4121;
+                overflow-y: auto;
+                margin-top: 10px;
+
+                p {
+                  margin: 5px 0;
+                  padding: 8px;
+                  cursor: pointer;
+                  transition: 0.3s;
+                }
+
+                p:hover {
+                  background-color: #0c4121;
+                  color: #fffceb;
+                  border-radius: 5px;
+
+                  #para{
+                    color: #fffceb;
+                  }
+                }
+                
+            }
+
+            
+        }
+
+
+        //eventlist with image
+        .eventslist{
+            height: 100%;
+            width: 70%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+
+            .event-card{
+                height: 31%;
+                object-fit: cover;
+                margin: 10px;   
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0px 2px 9px 4px #0c4121;
+                
+
+
+                img{
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 8px;
+
+                }
+
+
+
+                .overlay{
+                    background-color: #0c4121;
+                    opacity: 0.7;
+                    position: absolute;
+                    top: 0;
+                    z-index: 1;
+                    height: 100%;
+                    width: 100%;
+                    display: none;
+                }
+                &:hover .overlay{
+                    display: block;
+                }
+
+                h1{
+                    z-index: 2;
+                    position: absolute;
+                    display: none;
+                    color: #fffceb;
+                    
+                }
+                &:hover h1{
+                    display: block;
+                }
+            }
+        }
+        .eventslist > div {
+            flex: 0 0 calc(50% - 100px);
+            border-radius: 8px;
+            text-align: center;
+        }
+    }
+    
+}

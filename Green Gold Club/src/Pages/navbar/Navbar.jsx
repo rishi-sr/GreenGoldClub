@@ -1,33 +1,47 @@
-import React from 'react'
-import './navbar.scss'
-import { Link } from 'react-router'
+import React from 'react';
+import './navbar.scss';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-  return (
-    <>
-    <div className="navbar">
-        <div className="logo"><img src="ggclogo.png" alt="" />
-        <h1>Green Gold Club</h1></div>
-        <div className="links">
-            <ul>
-                <li>Home</li>
-                <li>Appreciation</li>
-                <li>Merchandise</li>
-                <li>
-                    <select name="services" defaultValue="Our Services" id='service'>
-                        <option disabled>Our Services</option>
-                        <option value="/home">Development</option>
-                        <option value="design">Design</option>
-                        <option value="marketing">Marketing</option>
-                    </select>
-                </li>
-                <li>Gallery</li>
-                <li>Contact US</li>
-            </ul>
-        </div>
-    </div>
-    </>
-  )
-}
+  const navigate = useNavigate();
 
-export default Navbar
+  const handleSelect = (e) => {
+    const path = e.target.value;
+    if (path && path !== 'Our Services') {
+      navigate(path);
+    }
+  };
+
+  return (
+    <div className="navbar">
+      <div className="logo">
+        <img src="ggclogo.png" alt="Green Gold Club Logo" />
+        <h1>Green Gold Club</h1>
+      </div>
+      <div className="links">
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/appreciation">Appreciation</Link></li>
+          <li><Link to="/merchandise">Merchandise</Link></li>
+          <li>
+            <select
+              name="services"
+              defaultValue="Our Services"
+              id="service"
+              onChange={handleSelect}
+            >
+              <option disabled>Our Services</option>
+              <option value="/development">Development</option>
+              <option value="/Slider">Design</option>
+              <option value="/marketing">Marketing</option>
+            </select>
+          </li>
+          <li><Link to="/gallery">Gallery</Link></li>
+          <li><Link to="/contact">Contact Us</Link></li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
