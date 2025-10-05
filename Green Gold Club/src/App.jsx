@@ -1,21 +1,24 @@
-// #fffceb background
-//main color #0c4121
+import './App.scss';
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import './App.scss'
-import Home from "./Pages/home/Home";
+import Home from './Pages/Home';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
 
 function App() {
-  
-
   return (
     <>
+    <Router>
+        <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/home" element={<Home/>} />
-
       </Routes>
+        <Footer/>
+    </Router>
+    
     </>
-  )
+  );
 }
 
-export default App
+export default App;

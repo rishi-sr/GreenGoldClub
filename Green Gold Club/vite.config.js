@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     allowedHosts: [
-      'advanced-kuwait-strain-declare.trycloudflare.com'
+      'issue-copyright-dramatically-entirely.trycloudflare.com'
     ]
   }
 })
